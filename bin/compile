@@ -13,8 +13,8 @@ NUGET_BINARY="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
 PAKET_BINARY="https://github.com/fsprojects/Paket/releases/download/5.114.5/paket.exe"
 
 NUGET="${BUILD_DIR}/vendor/mono/bin/nuget.exe"
-MOZROOT="${BUILD_DIR}/vendor/mono/lib/mono/5.2/mozroots.exe"
-XBUILD="${BUILD_DIR}/vendor/mono/lib/mono/5.2/xbuild.exe"
+MOZROOT="${BUILD_DIR}/vendor/mono/lib/mono/5.4/mozroots.exe"
+XBUILD="${BUILD_DIR}/vendor/mono/lib/mono/5.4/xbuild.exe"
 
 echo "-----> Downloading mono to ${CACHE_DIR}/$STACK/vendor"
 if [ ! -d ${CACHE_DIR}/$STACK/vendor/mono ]; then
@@ -63,7 +63,7 @@ fi
 
 if [ -f app.fsx ]; then
   echo "-----> Compiling app.fsx"
-  mono /app/mono/lib/mono/5.2/fsc.exe app.fsx
+  mono /app/mono/lib/mono/5.4/fsc.exe app.fsx
 elif [ -f *.sln ]; then
    echo "-----> Compiling application"
    mono $XBUILD
